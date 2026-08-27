@@ -1,0 +1,8 @@
+variable,adf_statistic,p_value,critical_val_1%,critical_val_5%,stationary_at_5%
+temperature,-5.7361,1e-06,-3.4727,-2.8801,True
+temperature_2m_mean,-2.9945,0.035414,-3.4735,-2.8805,True
+apparent_temperature_mean,-2.4263,0.13444,-3.4738,-2.8806,False
+precipitation_sum,-5.9057,0.0,-3.4727,-2.8801,True
+wind_speed_10m_max,-7.5059,0.0,-3.4727,-2.8801,True
+shortwave_radiation_sum,-6.7675,0.0,-3.4727,-2.8801,True
+sunshine_duration,-6.9748,0.0,-3.4727,-2.8801,True

@@ -80,16 +80,16 @@ body {
 /* Glassmorphism utility */
 .glass-panel {
   background: var(--bg-panel);
-  backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
   border: 1px solid var(--border-light);
   border-radius: 12px;
 }
 
 .glass-card {
   background: var(--bg-card);
-  backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
   border: 1px solid var(--border-light);
   border-radius: 10px;
   transition: var(--transition-smooth);

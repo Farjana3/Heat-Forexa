@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: dark;
+  color: #F8FAFC;
+  background-color: #0B1220;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Theme color palette variables */
+  --bg-main: #0B1220;
+  --bg-panel: rgba(15, 23, 42, 0.7);
+  --bg-card: rgba(22, 30, 49, 0.55);
+  --bg-card-hover: rgba(30, 41, 67, 0.75);
+  --border-light: rgba(255, 255, 255, 0.08);
+  --border-focus: rgba(34, 211, 238, 0.4);
+  
+  --text-main: #F8FAFC;
+  --text-secondary: #94A3B8;
+  
+  --primary: #22D3EE;
+  
+  /* Glowing / Thermal effects */
+  --accent-orange: #F97316; /* High Risk Orange */
+  --accent-red: #EF4444;    /* Extreme Red */
+  --accent-yellow: #F59E0B; /* Moderate Amber */
+  --accent-green: #22C55E;  /* Low Risk Green */
+  --accent-cyan: #22D3EE;
+  --accent-blue: #3b82f6;
+  --accent-purple: #8b5cf6;
+
+  --shadow-glow: 0 0 15px rgba(34, 211, 238, 0.2);
+  --shadow-glow-red: 0 0 15px rgba(239, 68, 68, 0.25);
+  --shadow-glow-blue: 0 0 15px rgba(34, 211, 238, 0.2);
+  
+  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background: radial-gradient(circle at 50% 0%, #1e293b 0%, #0B1220 70%);
+  background-attachment: fixed;
+  overflow-x: hidden;
+}
+
+/* Custom premium scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-main);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+/* Glassmorphism utility */
+.glass-panel {
+  background: var(--bg-panel);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+}
+
+.glass-card {
+  background: var(--bg-card);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid var(--border-light);
+  border-radius: 10px;
+  transition: var(--transition-smooth);
+}
+
+.glass-card:hover {
+  background: var(--bg-card-hover);
+  border-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+}
+
+/* Glowing text and status indications */
+.glow-text-green {
+  text-shadow: 0 0 8px rgba(34, 197, 94, 0.6);
+  color: var(--accent-green);
+}
+
+.glow-text-amber {
+  text-shadow: 0 0 8px rgba(245, 158, 11, 0.6);
+  color: var(--accent-yellow);
+}
+
+.glow-text-orange {
+  text-shadow: 0 0 8px rgba(249, 115, 22, 0.6);
+  color: var(--accent-orange);
+}
+
+.glow-text-red {
+  text-shadow: 0 0 8px rgba(239, 68, 68, 0.6);
+  color: var(--accent-red);
+}
+
+.glow-text-cyan {
+  text-shadow: 0 0 8px rgba(34, 211, 238, 0.6);
+  color: var(--accent-cyan);
+}
+
+.glow-text-primary {
+  text-shadow: 0 0 8px rgba(34, 211, 238, 0.6);
+  color: var(--primary);
+}
+
+/* Standard animation classes */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse-slow {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(0.98); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 3s infinite ease-in-out;
+}

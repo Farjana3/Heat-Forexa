@@ -1,0 +1,93 @@
+{
+  "comparison": [
+    {
+      "Model": "Persistence Baseline",
+      "Val_MAE": 0.5108,
+      "Val_RMSE": 0.7179,
+      "Val_R2": 0.4896,
+      "Test_MAE": 0.5695,
+      "Test_RMSE": 0.7624,
+      "Test_R2": 0.134
+    },
+    {
+      "Model": "XGBoost (Delta-Target)",
+      "Val_MAE": 0.5036,
+      "Val_RMSE": 0.6894,
+      "Val_R2": 0.5293,
+      "Test_MAE": 0.6171,
+      "Test_RMSE": 0.7875,
+      "Test_R2": 0.0762
+    },
+    {
+      "Model": "ARMAX (Delta Daily Agg)",
+      "Val_MAE": 0.5126,
+      "Val_RMSE": 0.7039,
+      "Val_R2": 0.3611,
+      "Test_MAE": 0.5545,
+      "Test_RMSE": 0.7602,
+      "Test_R2": -0.0724
+    }
+  ],
+  "feature_importance": [
+    {
+      "Feature": "wind_gusts_10m_max",
+      "Importance": 0.14687474
+    },
+    {
+      "Feature": "temperature_2m_min",
+      "Importance": 0.089149125
+    },
+    {
+      "Feature": "apparent_temperature_mean",
+      "Importance": 0.08386724
+    },
+    {
+      "Feature": "sunshine_duration",
+      "Importance": 0.068577506
+    },
+    {
+      "Feature": "apparent_temperature_max",
+      "Importance": 0.056792546
+    },
+    {
+      "Feature": "wind_speed_10m_max",
+      "Importance": 0.056670457
+    },
+    {
+      "Feature": "temperature_2m_mean",
+      "Importance": 0.049371585
+    },
+    {
+      "Feature": "dom_cos",
+      "Importance": 0.049305752
+    },
+    {
+      "Feature": "temp_2m_range",
+      "Importance": 0.04831524
+    },
+    {
+      "Feature": "apparent_temp_range",
+      "Importance": 0.04334512
+    },
+    {
+      "Feature": "apparent_temperature_min",
+      "Importance": 0.042600147
+    },
+    {
+      "Feature": "shortwave_radiation_sum",
+      "Importance": 0.0385138
+    },
+    {
+      "Feature": "month",
+      "Importance": 0.03588416
+    },
+    {
+      "Feature": "temperature_2m_max",
+      "Importance": 0.030601123
+    },
+    {
+      "Feature": "dow_sin",
+      "Importance": 0.030468134
+    }
+  ]
+}

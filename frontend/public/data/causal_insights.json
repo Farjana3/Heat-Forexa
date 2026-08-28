@@ -1,0 +1,214 @@
+{
+  "granger_results": [
+    {
+      "exogenous_variable": "temperature_2m_mean",
+      "lag": 1,
+      "f_statistic": 0.3719,
+      "p_value": 0.542845,
+      "granger_causes_temp_5%": false
+    },
+    {
+      "exogenous_variable": "temperature_2m_mean",
+      "lag": 2,
+      "f_statistic": 0.2658,
+      "p_value": 0.76697,
+      "granger_causes_temp_5%": false
+    },
+    {
+      "exogenous_variable": "temperature_2m_mean",
+      "lag": 3,
+      "f_statistic": 1.239,
+      "p_value": 0.297743,
+      "granger_causes_temp_5%": false
+    },
+    {
+      "exogenous_variable": "temperature_2m_mean",
+      "lag": 4,
+      "f_statistic": 0.7469,
+      "p_value": 0.561622,
+      "granger_causes_temp_5%": false
+    },
+    {
+      "exogenous_variable": "temperature_2m_mean",
+      "lag": 5,
+      "f_statistic": 0.6247,
+      "p_value": 0.681194,
+      "granger_causes_temp_5%": false
+    },
+    {
+      "exogenous_variable": "apparent_temperature_mean",
+      "lag": 1,
+      "f_statistic": 0.3907,
+      "p_value": 0.532877,
+      "granger_causes_temp_5%": false
+    },
+    {
+      "exogenous_variable": "apparent_temperature_mean",
+      "lag": 2,
+      "f_statistic": 0.3461,
+      "p_value": 0.708003,
+      "granger_causes_temp_5%": false
+    },
+    {
+      "exogenous_variable": "apparent_temperature_mean",
+      "lag": 3,
+      "f_statistic": 4.9222,
+      "p_value": 0.002743,
+      "granger_causes_temp_5%": true
+    },
+    {
+      "exogenous_variable": "apparent_temperature_mean",
+      "lag": 4,
+      "f_statistic": 3.1825,
+      "p_value": 0.015352,
+      "granger_causes_temp_5%": true
+    },
+    {
+      "exogenous_variable": "apparent_temperature_mean",
+      "lag": 5,
+      "f_statistic": 3.4368,
+      "p_value": 0.005814,
+      "granger_causes_temp_5%": true
+    },
+    {
+      "exogenous_variable": "precipitation_sum",
+      "lag": 1,
+      "f_statistic": 2.5234,
+      "p_value": 0.114216,
+      "granger_causes_temp_5%": false
+    },
+    {
+      "exogenous_variable": "precipitation_sum",
+      "lag": 2,
+      "f_statistic": 1.4686,
+      "p_value": 0.233509,
+      "granger_causes_temp_5%": false
+    },
+    {
+      "exogenous_variable": "precipitation_sum",
+      "lag": 3,
+      "f_statistic": 1.3786,
+      "p_value": 0.251616,
+      "granger_causes_temp_5%": false
+    },
+    {
+      "exogenous_variable": "precipitation_sum",
+      "lag": 4,
+      "f_statistic": 1.0759,
+      "p_value": 0.370695,
+      "granger_causes_temp_5%": false
+    },
+    {
+      "exogenous_variable": "precipitation_sum",
+      "lag": 5,
+      "f_statistic": 1.0884,
+      "p_value": 0.36945,
+      "granger_causes_temp_5%": false
+    },
+    {
+      "exogenous_variable": "wind_speed_10m_max",
+      "lag": 1,
+      "f_statistic": 1.5976,
+      "p_value": 0.208151,
+      "granger_causes_temp_5%": false
+    },
+    {
+      "exogenous_variable": "wind_speed_10m_max",
+      "lag": 2,
+      "f_statistic": 1.4557,
+      "p_value": 0.236482,
+      "granger_causes_temp_5%": false
+    },
+    {
+      "exogenous_variable": "wind_speed_10m_max",
+      "lag": 3,
+      "f_statistic": 2.6111,
+      "p_value": 0.053618,
+      "granger_causes_temp_5%": false
+    },
+    {
+      "exogenous_variable": "wind_speed_10m_max",
+      "lag": 4,
+      "f_statistic": 1.5868,
+      "p_value": 0.180925,
+      "granger_causes_temp_5%": false
+    },
+    {
+      "exogenous_variable": "wind_speed_10m_max",
+      "lag": 5,
+      "f_statistic": 1.1235,
+      "p_value": 0.350679,
+      "granger_causes_temp_5%": false
+    },
+    {
+      "exogenous_variable": "shortwave_radiation_sum",
+      "lag": 1,
+      "f_statistic": 2.0831,
+      "p_value": 0.150967,
+      "granger_causes_temp_5%": false
+    },
+    {
+      "exogenous_variable": "shortwave_radiation_sum",
+      "lag": 2,
+      "f_statistic": 1.4721,
+      "p_value": 0.232726,
+      "granger_causes_temp_5%": false
+    },
+    {
+      "exogenous_variable": "shortwave_radiation_sum",
+      "lag": 3,
+      "f_statistic": 1.0145,
+      "p_value": 0.388109,
+      "granger_causes_temp_5%": false
+    },
+    {
+      "exogenous_variable": "shortwave_radiation_sum",
+      "lag": 4,
+      "f_statistic": 0.6011,
+      "p_value": 0.662437,
+      "granger_causes_temp_5%": false
+    },
+    {
+      "exogenous_variable": "shortwave_radiation_sum",
+      "lag": 5,
+      "f_statistic": 0.1409,
+      "p_value": 0.98242,
+      "granger_causes_temp_5%": false
+    },
+    {
+      "exogenous_variable": "sunshine_duration",
+      "lag": 1,
+      "f_statistic": 1.628,
+      "p_value": 0.203899,
+      "granger_causes_temp_5%": false
+    },
+    {
+      "exogenous_variable": "sunshine_duration",
+      "lag": 2,
+      "f_statistic": 0.7783,
+      "p_value": 0.461022,
+      "granger_causes_temp_5%": false
+    },
+    {
+      "exogenous_variable": "sunshine_duration",
+      "lag": 3,
+      "f_statistic": 0.5252,
+      "p_value": 0.665664,
+      "granger_causes_temp_5%": false
+    },
+    {
+      "exogenous_variable": "sunshine_duration",
+      "lag": 4,
+      "f_statistic": 0.4246,
+      "p_value": 0.790724,
+      "granger_causes_temp_5%": false
+    },
+    {
+      "exogenous_variable": "sunshine_duration",
+      "lag": 5,
+      "f_statistic": 0.3096,
+      "p_value": 0.906549,
+      "granger_causes_temp_5%": false
+    }
+  ]
+}

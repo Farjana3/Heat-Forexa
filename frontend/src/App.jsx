@@ -206,9 +206,6 @@ export default function App() {
       <header className="dashboard-header">
         <div className="header-title-container">
           <div className="header-brand">
-            <div className="header-logo-icon">
-              <Flame size={22} style={{ color: '#f97316' }} />
-            </div>
             <h1>
               <span className="brand-highlight">HEAT-FOREXA</span>
               <span className="brand-divider">:</span>

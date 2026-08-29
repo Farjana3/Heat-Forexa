@@ -5,7 +5,7 @@
 [![React](https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react)](https://reactjs.org)
 [![FortyGuard API](https://img.shields.io/badge/FortyGuard-API%20Integrated-orange?style=for-the-badge)](https://fortyguard.com)
 
-**Heat-Forexa** is a machine learning decision-support tool that predicts neighborhood temperatures and helps cities combat extreme heat in Miami. By combining high-resolution temperature map data from FortyGuard with weather data from Open-Meteo, Heat-Forexa allows users to select any location, date, and time to get future microclimate forecasts, discover main weather causes, and simulate heat-reduction solutions (such as planting trees or adding cool roofs). An agentic AI advisor guides users through evaluating heat risks and choosing optimal interventions.
+**Heat-Forexa** is a machine learning decision-support tool that predicts neighborhood temperatures and helps cities combat extreme heat in Miami. By combining high-resolution temperature map data from FortyGuard with weather data from Open-Meteo, Heat-Forexa allows users to select any location and date to get future microclimate forecasts, discover main weather causes, and simulate heat-reduction solutions (such as planting trees or adding cool roofs). An agentic AI advisor guides users through evaluating heat risks and choosing optimal interventions.
 
 ---
 

@@ -1,6 +1,6 @@
 # Heat-Forexa
 ## Spatial ML Thermal Forecasting & Agentic AI Urban Mitigation Decision Support System (DSS)
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-heat--forexa.netlify.app-brightgreen?style=for-the-badge&logo=netlify)](https://heat-forexa.netlify.app/)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-heat--forexa.netlify.app-brightgreen?style=for-the-badge&logo=netlify)](https://heat-forexa-dashboard.netlify.app/)
 [![Python](https://img.shields.io/badge/Python-3.10%2B-blue?style=for-the-badge&logo=python)](https://python.org)
 [![React](https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react)](https://reactjs.org)
 [![FortyGuard API](https://img.shields.io/badge/FortyGuard-API%20Integrated-orange?style=for-the-badge)](https://fortyguard.com)
@@ -11,7 +11,7 @@
 
 ## 🔗 Live Demo
 Access the interactive web dashboard live on Netlify:
-**[https://heat-forexa.netlify.app/](https://heat-forexa.netlify.app/)**
+**[https://heat-forexa.netlify.app/](https://heat-forexa-dashboard.netlify.app/)**
 
 ---
 

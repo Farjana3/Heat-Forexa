@@ -1136,7 +1136,7 @@ html, body {
   /* Floating navigation button mobile placement */
   .scroll-arrow-container {
     right: 1rem !important;
-    bottom: 1rem !important;
+    bottom: 4.5rem !important;
   }
 
   .scroll-arrow-container > div:first-child {

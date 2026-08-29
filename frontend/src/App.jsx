@@ -169,7 +169,7 @@ export default function App() {
     return (
       <div style={{ display: 'flex', flexDirection: 'column', height: '100vh', width: '100vw', alignItems: 'center', justifyContent: 'center', backgroundColor: '#0B1220', gap: '1rem' }}>
         <div className="animate-pulse-slow" style={{ width: 64, height: 64, borderRadius: '50%', border: '4px solid var(--primary)', borderTopColor: 'transparent', animation: 'spin 1s infinite linear' }} />
-        <span style={{ fontSize: '1.1rem', fontWeight: 600, color: 'var(--primary)' }} className="animate-pulse-slow">
+        <span style={{ fontSize: '1.1rem', fontWeight: 600, color: 'var(--primary)', textAlign: 'center', padding: '0 1rem' }} className="animate-pulse-slow">
           Synthesizing Spatiotemporal Heat Projections...
         </span>
         <style dangerouslySetInnerHTML={{__html: `

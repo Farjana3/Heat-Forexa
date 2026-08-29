@@ -31,40 +31,43 @@ export default function App() {
 
   // Floating scroll arrow state (supports Down & Up directions)
   const [showScrollArrow, setShowScrollArrow] = useState(false);
-  const [showButton, setShowButton] = useState(false);
   const [isAtBottom, setIsAtBottom] = useState(false);
+  const [tileJustSelected, setTileJustSelected] = useState(false);
   const advisorRef = useRef(null);
 
-  // Track window scroll position to switch arrow direction
+  // Track window scroll position to detect page bottom
+  // Clear tileJustSelected on next scroll so normal direction logic resumes
   useEffect(() => {
     const handleScroll = () => {
-      const scrolled = window.scrollY > 150;
       const atBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 150;
-      setShowButton(scrolled);
       setIsAtBottom(atBottom);
+      setTileJustSelected(false); // clear override once user scrolls
     };
-
     window.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   // Wrapper to show arrow when user clicks a tile
+  // tileJustSelected forces down-arrow (See Agent Recommendations) immediately on click
   const handleTileSelect = useCallback((tileId) => {
     setSelectedTileId(tileId);
     setShowScrollArrow(true);
+    setTileJustSelected(true);
   }, []);
 
   // Toggle scroll position: scroll down to Advisor or scroll up to top
+  // Clicking "Back to Top" also hides the button until next tile selection
   const handleFloatingClick = useCallback(() => {
-    if (isAtBottom) {
+    if (isAtBottom && !tileJustSelected) {
       window.scrollTo({ top: 0, behavior: 'smooth' });
+      setShowScrollArrow(false); // hide button after returning to top
     } else {
       if (advisorRef.current) {
         advisorRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
     }
-  }, [isAtBottom]);
+  }, [isAtBottom, tileJustSelected]);
 
 
   // Fetch all precomputed datasets on mount
@@ -309,8 +312,8 @@ export default function App() {
       </div>
     </div>
 
-    {/* Portal: render the floating arrow outside the app-container so position:fixed works */}
-    {(showScrollArrow || showButton) && ReactDOM.createPortal(
+    {/* Portal: hidden until tile is selected. isAtBottom controls up/down direction only. */}
+    {showScrollArrow && ReactDOM.createPortal(
       <>
         <div 
           className="scroll-arrow-container"
@@ -354,7 +357,7 @@ export default function App() {
               e.currentTarget.style.boxShadow = '0 0 15px rgba(251, 191, 36, 0.15)';
             }}
           >
-            <span style={{ letterSpacing: '0.03em' }}>{isAtBottom ? "Back to Top" : "See Agent Recommendations"}</span>
+            <span style={{ letterSpacing: '0.03em' }}>{(isAtBottom && !tileJustSelected) ? "Back to Top" : "See Agent Recommendations"}</span>
             <div style={{ width: '25px', height: '1.5px', background: '#fbbf24', position: 'relative', opacity: 0.8 }}>
               <div style={{ position: 'absolute', right: 0, top: '-2px', width: '5px', height: '5px', borderRadius: '50%', background: '#fbbf24' }} />
             </div>
@@ -362,7 +365,7 @@ export default function App() {
 
           <button
             onClick={handleFloatingClick}
-            aria-label={isAtBottom ? "Scroll to Top" : "Scroll to AI Advisor"}
+            aria-label={(isAtBottom && !tileJustSelected) ? "Scroll to Top" : "Scroll to AI Advisor"}
             className="scroll-arrow-btn"
             style={{
               pointerEvents: 'auto',
@@ -390,7 +393,7 @@ export default function App() {
               e.currentTarget.style.boxShadow = '0 0 20px rgba(251, 191, 36, 0.3), 0 4px 12px rgba(0,0,0,0.4)';
             }}
           >
-            {isAtBottom ? (
+            {(isAtBottom && !tileJustSelected) ? (
               <ChevronUp size={24} strokeWidth={2.5} />
             ) : (
               <ChevronDown size={24} strokeWidth={2.5} />
@@ -400,7 +403,7 @@ export default function App() {
         <style dangerouslySetInnerHTML={{__html: `
           @keyframes arrowBounce {
             0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(6px); }
+            50% { transform: translateY(${(isAtBottom && !tileJustSelected) ? '-6px' : '6px'}); }
           }
           @keyframes arrowFadeIn {
             from { opacity: 0; transform: translate(15px, 0); }

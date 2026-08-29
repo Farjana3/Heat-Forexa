@@ -477,6 +477,109 @@
   gap: 0.5rem;
   font-size: 0.75rem;
 }
+/* Leaflet GIS Map Styling and Overrides */
+#gis-leaflet-map {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.leaflet-container {
+  background-color: #05070e !important;
+}
+
+/* Custom tile filter to invert standard OSM tiles into a premium dark theme */
+.leaflet-tile {
+  filter: invert(100%) hue-rotate(180deg) brightness(85%) contrast(100%) !important;
+}
+
+/* Control smooth heatmap layer global opacity to ensure city map features are visible underneath */
+.leaflet-heatmap-layer,
+.leaflet-heatmapPane-pane {
+  opacity: 0.26 !important;
+}
+
+/* Customize Leaflet default controls to dark theme */
+.leaflet-bar {
+  border: 1px solid var(--border-light) !important;
+  box-shadow: var(--shadow-glow-blue) !important;
+  border-radius: 6px !important;
+  overflow: hidden;
+}
+
+.leaflet-bar a,
+.leaflet-bar a:hover {
+  background-color: rgba(15, 23, 42, 0.95) !important;
+  color: var(--primary) !important;
+  border-bottom: 1px solid var(--border-light) !important;
+  transition: var(--transition-smooth);
+}
+
+.leaflet-bar a:hover {
+  background-color: var(--primary) !important;
+  color: #0b1220 !important;
+}
+
+.leaflet-bar a.leaflet-disabled {
+  background-color: rgba(15, 23, 42, 0.5) !important;
+  color: rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Hide default leaflet attribution background to match seamlessly */
+.leaflet-container .leaflet-control-attribution {
+  background: rgba(10, 15, 30, 0.8) !important;
+  color: var(--text-secondary) !important;
+  font-size: 0.65rem;
+  border-top-left-radius: 4px;
+  border-left: 1px solid var(--border-light);
+  border-top: 1px solid var(--border-light);
+}
+
+.leaflet-container .leaflet-control-attribution a {
+  color: var(--primary) !important;
+}
+
+/* Add custom styles to view mode switcher button in SpatialMap */
+.map-view-switcher {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 10;
+  display: flex;
+  background: rgba(10, 15, 30, 0.85);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  padding: 0.25rem;
+  border-radius: 6px;
+  border: 1px solid var(--border-light);
+  gap: 0.25rem;
+}
+
+.switcher-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.switcher-btn:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.switcher-btn.active {
+  background: var(--primary);
+  color: #000;
+  font-weight: 600;
+}
 
 .legend-title {
   font-weight: 600;

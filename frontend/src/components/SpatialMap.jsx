@@ -181,10 +181,25 @@ export default function SpatialMap({
     if (nearest) {
       const canvas = canvasRef.current;
       const canvasRect = canvas.getBoundingClientRect();
-      setTooltipPos({
-        x: e.clientX - canvasRect.left + 15,
-        y: e.clientY - canvasRect.top + 10
-      });
+      
+      let x = e.clientX - canvasRect.left + 15;
+      let y = e.clientY - canvasRect.top + 10;
+      
+      // Prevent tooltip clipping at container boundaries
+      const tooltipWidth = 150;  // estimated width including padding
+      const tooltipHeight = 100; // estimated height including padding
+      
+      if (x + tooltipWidth > canvasRect.width) {
+        x = e.clientX - canvasRect.left - tooltipWidth - 15; // Shift left
+      }
+      if (y + tooltipHeight > canvasRect.height) {
+        y = e.clientY - canvasRect.top - tooltipHeight - 10; // Shift top
+      }
+      
+      x = Math.max(5, x);
+      y = Math.max(5, y);
+
+      setTooltipPos({ x, y });
     }
   };
 

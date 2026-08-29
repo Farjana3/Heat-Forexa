@@ -11,7 +11,7 @@
 
 ## 🔗 Live Demo
 Access the interactive web dashboard live on Netlify:
-**[https://heat-forexa.netlify.app/](https://heat-forexa-dashboard.netlify.app/)**
+**[https://heat-forexa-dashboard.netlify.app/](https://heat-forexa-dashboard.netlify.app/)**
 
 ---
 

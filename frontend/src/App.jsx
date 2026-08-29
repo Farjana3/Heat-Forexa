@@ -31,17 +31,21 @@ export default function App() {
 
   // Floating scroll arrow state (supports Down & Up directions)
   const [showScrollArrow, setShowScrollArrow] = useState(false);
-  const [isScrolledDown, setIsScrolledDown] = useState(false);
+  const [showButton, setShowButton] = useState(false);
+  const [isAtBottom, setIsAtBottom] = useState(false);
   const advisorRef = useRef(null);
 
   // Track window scroll position to switch arrow direction
   useEffect(() => {
     const handleScroll = () => {
-      const scrolled = window.scrollY > 300;
-      setIsScrolledDown(scrolled);
+      const scrolled = window.scrollY > 150;
+      const atBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 150;
+      setShowButton(scrolled);
+      setIsAtBottom(atBottom);
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -53,14 +57,14 @@ export default function App() {
 
   // Toggle scroll position: scroll down to Advisor or scroll up to top
   const handleFloatingClick = useCallback(() => {
-    if (isScrolledDown) {
+    if (isAtBottom) {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     } else {
       if (advisorRef.current) {
         advisorRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
     }
-  }, [isScrolledDown]);
+  }, [isAtBottom]);
 
 
   // Fetch all precomputed datasets on mount
@@ -309,7 +313,7 @@ export default function App() {
     </div>
 
     {/* Portal: render the floating arrow outside the app-container so position:fixed works */}
-    {(showScrollArrow || isScrolledDown) && ReactDOM.createPortal(
+    {(showScrollArrow || showButton) && ReactDOM.createPortal(
       <>
         <div 
           className="scroll-arrow-container"
@@ -353,7 +357,7 @@ export default function App() {
               e.currentTarget.style.boxShadow = '0 0 15px rgba(251, 191, 36, 0.15)';
             }}
           >
-            <span style={{ letterSpacing: '0.03em' }}>{isScrolledDown ? "Back to Top" : "See Agent Recommendations"}</span>
+            <span style={{ letterSpacing: '0.03em' }}>{isAtBottom ? "Back to Top" : "See Agent Recommendations"}</span>
             <div style={{ width: '25px', height: '1.5px', background: '#fbbf24', position: 'relative', opacity: 0.8 }}>
               <div style={{ position: 'absolute', right: 0, top: '-2px', width: '5px', height: '5px', borderRadius: '50%', background: '#fbbf24' }} />
             </div>
@@ -361,7 +365,7 @@ export default function App() {
 
           <button
             onClick={handleFloatingClick}
-            aria-label={isScrolledDown ? "Scroll to Top" : "Scroll to AI Advisor"}
+            aria-label={isAtBottom ? "Scroll to Top" : "Scroll to AI Advisor"}
             className="scroll-arrow-btn"
             style={{
               pointerEvents: 'auto',
@@ -389,7 +393,7 @@ export default function App() {
               e.currentTarget.style.boxShadow = '0 0 20px rgba(251, 191, 36, 0.3), 0 4px 12px rgba(0,0,0,0.4)';
             }}
           >
-            {isScrolledDown ? (
+            {isAtBottom ? (
               <ChevronUp size={24} strokeWidth={2.5} />
             ) : (
               <ChevronDown size={24} strokeWidth={2.5} />

@@ -319,7 +319,7 @@ export default function App() {
           className="scroll-arrow-container"
           style={{
             position: 'fixed',
-            bottom: '2rem',
+            bottom: 'calc(2rem + 80px)',
             right: '2rem',
             zIndex: 9999,
             display: 'flex',
